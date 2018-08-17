@@ -14,7 +14,7 @@ module IC7447(input[3:0] in, input En, output reg[0:6] out);
 			4'b0111: out = 7'b0001111; // "7" 
 			4'b1000: out = 7'b0000000; // "8"  
 			4'b1001: out = 7'b0000100; // "9" 
-			default: out = 7'b0000001; // "0"
+			default: out = 7'b1111111; // "0"
 		endcase
 	end 
 endmodule 
