@@ -7,7 +7,7 @@ module bintoBCD(in, MSB, LSB);
 	always @(in) begin
 		MSB = 4'b0;
 		LSB = 4'b0;
-		for (i=5 ; i>=0 ; i=i-1) begin
+		for (i=6 ; i>=0 ; i=i-1) begin
 			if (MSB>=5)
 				MSB = MSB + 3;
 			if (LSB >= 5)

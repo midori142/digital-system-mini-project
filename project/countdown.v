@@ -42,4 +42,4 @@ module countdown(En, enSet, CLK, T, select, Q);
 		prevCLK = CLK;
 		prevEnSet = enSet;
 	end
-endmodule
+endmodule 
