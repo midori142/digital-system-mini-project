@@ -1,7 +1,7 @@
 module IC7447_2(input[3:0] in, input En, input enSet, output reg[0:6] out);
 	always @(*)
 	begin
-		if (En == 1'b0 || enSet == 1'b0)    out = 7'b1111111;
+		if (~En || ~enSet) out = 7'b1111111;
 		else
 		case(in)
 			4'b0000: out = 7'b0000001; // "0" 

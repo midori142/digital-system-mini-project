@@ -47,8 +47,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "T[6..0]" (rect 0 0 25 12)(font "Arial" ))
-		(text "T[6..0]" (rect 21 75 46 87)(font "Arial" ))
+		(text "t[20..0]" (rect 0 0 27 12)(font "Arial" ))
+		(text "t[20..0]" (rect 21 75 48 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
