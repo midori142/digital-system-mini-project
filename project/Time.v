@@ -1,22 +1,20 @@
-module Time(set, select, D, Q);
-	input 				set;				// set = 0/1: output/input data.
+module Time(IE, enSet, select, D, t);
+	input 				IE, enSet;				// set = 0/1: output/input data.
 	input[1:0] 			select;
 	input[6:0] 			D;
-	output reg[6:0]	Q;
-	
-	reg[6:0] tR, tY, tG;
+	output reg[20:0]  t;
 	
 	initial begin
-		tR = 'd35;
-		tY = 'd04;
-		tG = 'd25;
+		t[20:14]	= 7'b0100011;
+		t[13: 7] = 7'b0000100;
+		t[ 6: 0] = 7'b0011001;
 	end
-
-	always @(*) begin
+	
+	always @(posedge IE) begin
 		case (select)
-			2'b00: if (set) tR = D; else Q = tR;
-			2'b01: if (set) tY = D; else Q = tY;
-			2'b11: if (set) tG = D; else Q = tG;
-		endcase
+			2'b00: if (enSet) t[20:14] = D;
+			2'b01: if (enSet) t[13: 7] = D;
+			2'b11: if (enSet) t[ 6: 0] = D;
+		endcase 
 	end
 endmodule 
